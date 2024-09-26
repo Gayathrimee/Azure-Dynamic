@@ -61,24 +61,75 @@
 }
 #threelines{
     width: 48px;
-    /* width: 100%; */
     height: 48px;
-    display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
     border: none;
     margin: 1px;
+    /* display: block; */
 }
 #threelines img{
     width: 34px;
     height: 40px;
     color: black;
 }
-/* #threelines::before{
-    content: "";
-    font-family: MWF-MDL2;
-} */
+#crossbtn{
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    margin: 1px;
+    display: none;
+}
+#crossbtn img{
+    width: 20px;
+    height: 20px;
+    color: black;
+}
+.crossuls{
+    position: absolute;
+    top: 54px;
+    background-color: #f2f2f2;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    z-index:1;
+    display: none;
+}
+.crossuls ul{
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+}
+.crossuls li{
+    border-bottom: 1px solid #e6e6e6;
+    padding: 12px 8px 13px 15px;
+}
+.crossuls a{
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: inherit;
+}
+#leftArrow{
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    margin: 1px;
+    display: none;
+}
+#leftarw-img{
+    width: 16px;
+    height: 16px;
+}
 #search{
     width: 32px;
     height: 32px;
@@ -86,6 +137,15 @@
     background:transparent;
     border: none;
     display: flex;
+}
+form{
+    width: 100%;
+    display: none;
+}
+#form input{
+    border: 1px solid;
+    padding: 7px 10px 7px 40px;
+    width: 95%;
 }
 #searchbtn{
     width: 30px;
@@ -148,8 +208,11 @@
     width: 100%;
     position: relative;
 }
+.header-bottom.arrow #down-arrow-btn{
+    transform: rotate(180deg);
+}
 .navbarAzure{
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 88px;
     background: #f2f2f2;
@@ -157,7 +220,7 @@
     width: 100%;
     min-width: 320px;
     z-index: 50;
-    transition: all 0.3s ease-in;
+    transition: all 0.6s ease-in;
 }
 .navbarAzure ul{
     height: 100%;
@@ -197,6 +260,7 @@
     height: 19px;
     margin-left: 9px;
     margin-top: 3px;
+    transition: transform 0.3s ease-in-out;
 }
 #list-menu{
     display: none;
@@ -345,12 +409,12 @@
     width: 100%;
     background: #fefefe;
     box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.063rem 0.125rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
+    position: relative;
 }
 .nav_pad{
     display: flex;
     align-items: center;
     height: 56px;
-    /* justify-content: space-between; */
 }
 .nav_left{
     padding-left:4px;
@@ -359,7 +423,7 @@
     scrollbar-width: none;
     height: 100%;
     width: 100%;
-    position: relative;
+    /* position: relative; */
     transition: transform 0.5s ease;
     scroll-behavior: smooth;
 }
@@ -411,6 +475,56 @@
     letter-spacing: -0.02em;
     font-family:  "segoe-semibold";
 }
+.hidden-ul{
+    position: absolute;
+    top: 48px;
+    /* left: 4px; */
+    right: auto;
+    transform: translate(-4px 48px);
+    margin-top: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem;
+    display: none;
+}
+.nav-hidden-uls{
+    width: 100%;
+    padding-block-end: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+.nav-hidden-uls li{
+    width: 100%;
+    list-style-type: none;
+}
+.nav-hidden-uls a{
+    text-decoration: none;
+    color: #004275;
+    font-size: 13px;
+    font-family: segoe-semibold;
+    padding: 8px 12px;
+    width: 100%;
+    display: block;
+}
+.nav-hidden-uls span{
+    width: 100%;
+    padding-left: 0.75rem;
+}
+.hidden-ul hr{
+    margin-block: 0.75rem;
+}
+.hidden-ul button{
+    width: 100%;
+    padding: 4px 12px;
+    background-color: #0078d4;
+    border: 5px solid #0078d4;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+}
 .slide_arrows{
     background-color: rgba(255, 255, 255, 0.5);   /*White with 50% opacity*/
     padding: 20px ;
@@ -420,12 +534,11 @@
 .slide_arrows button{
     position: absolute;
     background: #ffffff;
-    padding: 5px;
     border-radius: 50%;
     display: flex;
     align-items: center;
+    border: 2px solid;
     /* display: none; */
-    /* border: none; */
 }
 .slide_arrows img{
     width: 16px;
@@ -433,10 +546,12 @@
 .left_arrow{
     left: 7%;
     bottom: 25%;
+    padding: 5px;
 }
 .right_arrow{
  top: 10px;
  padding-inline: 6px;
+ padding-block: 5px;
 }
 #r_arw{
     width: 13px;
@@ -684,6 +799,81 @@
 .contentA span{
     font-size: 16px;
 }
+.contentB{
+    margin-top: 24px;
+    padding-inline: 4px;
+}
+.Bwrites{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+.Bwrites ul{
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    flex-basis: 100%;
+    list-style-type: none;
+}
+.conts{
+    border-bottom: 0.0625rem solid #bdc5d2;
+    width: 100%;
+}
+.cont1{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.cont1 button{
+    display: flex;
+    justify-content: space-between;
+    padding-block:24px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+.Bwrites ul li:first-child button{
+    padding-top: 0 !important;
+}
+.cont1 img{
+    width: 16px;
+}
+.cont2A{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.cont2A p{
+    color: #002948;
+    font-family: segoe-regular;
+    letter-spacing: -0.02em;
+}
+.cont2Aa{
+    margin-bottom: 24px;
+}
+.cont2Aa a{
+    color: #004275;
+    font-family: segoe-semibold;
+    font-size: 13px;
+}
+.inCont2A .image{
+    width: 100%;
+    height: auto;
+}
+.inCont2A .image img{
+    border-radius: 1rem;
+}
+.cont2{
+    transition: all 0.6s ease-in;
+    display: none;
+}
+.cont2.show{
+    display: block;
+}
+
 
 /* ==================== media queries ================ */
 
@@ -887,6 +1077,9 @@
     max-width: 100vw;
     padding-inline: 3.5rem;
 }
+.hidden-ul{
+    display: none;
+}   
 }  
 
 /* ------------------------------- */
@@ -1161,6 +1354,3 @@
     padding-left:23px;
 }
 }   
-
-
-/* */

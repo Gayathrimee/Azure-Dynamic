@@ -6,6 +6,15 @@ const microsoft = {
 
         menu: "images/hamburger-menu.svg",
 
+        cross:'images/cross btn.svg',
+
+        leftArw:'images/leftArrow.png',
+
+        crossUls:[
+            "Microsoft 365","Teams","Copilot","Windows","Surface","Xbox","Support",
+            "Software","PCs & Devices", 'Entertainment','Business','Developer & IT','Other','View Sitemap'
+        ],
+
         searchbutton:"images/searchbtn.png",
 
         logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31",
@@ -171,35 +180,35 @@ const microsoft = {
                 [
                 {
                     text:'AI',
-                    btn:'',
+                    btn:'images/down-arrow.png',
                     p:'Build intelligent apps at enterprise scale with the Azure AI portfolio',
                     a:'Explore Azure AI solutions',
                     image:'images/AI-img1-351994-Desktop-Solutions-Featured-Tab1-800x636.avif'
                 },
                 {
                     text:'Responsible AI with Azure',
-                    btn:'',
+                    btn:'images/down-arrow.png',
                     p:'Develop, use, and govern AI solutions responsibly with Azure AI',
                     a:'Discover responsible AI solutions',
                     image:'images/AI-img2-351994-Desktop-Solutions-Featured-Tab2-800x636.avif'
                 },
                 {
                     text:'Trust your cloud',
-                    btn:'',
+                    btn:'images/down-arrow.png',
                     p:'Get security, reliability, and sustainability from the ground up-backed by a team of experts, and proactive compliance trusted by enterprises, governments, and startups.',
                     a:'Learn more',
                     image:'images/AI-img3-351994-Desktop-Solutions-Featured-Tab3-800x636.avif'
                 },
                 {
                     text:'Azure Confidential Computing',
-                    btn:'',
+                    btn:'images/down-arrow.png',
                     p:'Increase data privacy by protecting data in use',
                     a:'Learn about confidential computing',
                     image:'images/AI-img4-351994-Desktop-Solutions-Featured-Tab4-800x636.avif'
                 },
                 {
                     text:'Build and modernize intelligent apps',
-                    btn:'',
+                    btn:'images/down-arrow.png',
                     p:'Build AI-powered, intelligent apps and enhance your critical solutions with generative AI',
                     a:'Learn more',
                     image:'images/AI-img5-351994-Desktop-Solutions-Featured-Tab5-800x636.avif'
@@ -213,7 +222,7 @@ const microsoft = {
 
 }
 
-// .............................................................................................
+// =============================================================================================
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -225,10 +234,81 @@ document.addEventListener("DOMContentLoaded", function(){
         const headerTop = document.getElementById("header-top")
         
        //header1
-        const menuImg = document.getElementById("menu-img")
+
+    // ---------------------------------
+       const menuImg = document.getElementById("menu-img")
         menuImg.src = microsoft.header.menu
+        const CrossImg = document.getElementById('cross-img')
+        CrossImg.src = microsoft.header.cross
+        // menufn
+        menuImg.addEventListener('click',()=>{
+            toggleImage()
+        })
+        CrossImg.addEventListener('click',()=>{
+            toggleCross()
+        }) 
+
+        let crossBtn = document.getElementById('crossbtn')
+        let menubtn = document.getElementById('threelines')
+        let menuUls = document.querySelector('.crossuls')
+
+        function toggleImage(){
+            if( menubtn.style.display = 'block' || menubtn.style.display === ''){
+                menubtn.style.display = 'none'
+                crossBtn.style.display = 'block'
+            }
+            if(menuUls.style.display === 'none' || menuUls.style.display === ''){
+                menuUls.style.display = 'block'
+            }
+        }
+
+        function toggleCross(){
+
+            if(crossBtn.style.display === 'block' || crossBtn.style.display === ''){
+                crossBtn.style.display = 'none'
+                menubtn.style.display = 'block'
+            }
+            if(menuUls.style.display === 'block'){
+                menuUls.style.display = 'none'
+            }
+        }
+
+        // uls
+        const menuLis = document.createElement('ul')
+        microsoft.header.crossUls.forEach(item =>{
+            const menuA = document.createElement('li')
+            menuA.innerHTML = `<a href=#>${item}</a>`
+            menuLis.append(menuA)
+            menuUls.append(menuLis)
+        })
+    // ------------------------------------------
+   
+        let leftArwBtn = document.getElementById('leftArrow')
+        let form = document.getElementById('form')
+        const leftArwBtnImg = document.getElementById('leftarw-img').src = microsoft.header.leftArw
         const searchButton = document.getElementById("searchbtn")
         searchButton.src = microsoft.header.searchbutton
+
+        searchButton.addEventListener('click',()=>{
+            showArrowBtn()
+        })
+        leftArwBtn.addEventListener('click',()=>{
+            leftArwBtn.style.display = 'none'
+            form.style.display = 'none'
+            menubtn.style.display = 'block'
+            micro.style.display = 'flex'
+        })
+        
+        let micro = document.querySelector('.micro')
+        
+        function showArrowBtn(){
+            if(leftArwBtn.style.display === 'none' || leftArwBtn.style.display === ''){
+                leftArwBtn.style.display = 'block'
+                form.style.display = 'block'
+                menubtn.style.display = 'none'
+                micro.style.display = 'none'
+            }
+        } 
 
         const microsoftLogo = document.getElementById("microsoft")
         microsoftLogo.src = microsoft.header.logo
@@ -255,20 +335,17 @@ document.addEventListener("DOMContentLoaded", function(){
         // dropdown fn
            headerBottom.addEventListener('click',()=>{
                     toggleDown() 
+                headerBottom.classList.toggle('arrow')
                         
            })
+
            function toggleDown(){
             const ulNavbar = document.querySelector('.navbarAzure')
             if(ulNavbar.style.display === 'none' || ulNavbar.style.display ===''){
                 ulNavbar.style.display = 'block'
-                downArrw()
             } else{
                 ulNavbar.style.display = 'none'
             }
-           }
-
-           function downArrw(){
-                downArrow.style.transform = `rotate(180deg)`
            }
         //.................................. header2 with dropdown fn .............................
 
@@ -333,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function(){
             `<a href = "#"> ${item.text} </a>`
 
             signIn.appendChild(list2Items)
-        });
+        }); 
 
         const searchBtn3 = document.getElementById("search_text")
         searchBtn3.innerHTML = microsoft.header.search
@@ -368,7 +445,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const url = 'https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account'
         window.location.href = url
     });
-
+ 
     const stickyNav = document.getElementById('nav_uls')
     microsoft.stickynav.uls.forEach( item => {
         const ulItems = document.createElement('li')
@@ -379,12 +456,19 @@ document.addEventListener("DOMContentLoaded", function(){
         stickyNav.appendChild(ulItems)
     })
 
-    const arrowDown = document.getElementById('dwn_arw').src = microsoft.arrowdown.image
-
-    const clickArrow = document.getElementById('dwn_arw')
-    clickArrow.addEventListener('click', function(){
-        clickArrow.classList.toggle('in-active')
+    const hiddenStickyNav = document.getElementById('nav-hidden-uls')
+    microsoft.stickynav.uls.forEach(item => {
+        const hiddenItems = document.createElement('li')
+        hiddenItems.innerHTML = `<a href=#><span class = "features">${item}</span></a>`
+        hiddenStickyNav.append(hiddenItems)
     })
+    const hiddenUl = document.querySelector('.hidden-ul')
+    const hiddenNavBtn = document.createElement('button')
+    hiddenNavBtn.innerHTML = 'Get Started'
+    hiddenStickyNav.append(hiddenNavBtn)
+    hiddenUl.append(hiddenNavBtn)
+
+    const arrowDown = document.getElementById('dwn_arw').src = microsoft.arrowdown.image
 
 
     const stickyRight = document.getElementById('nav_rit_in')
@@ -400,30 +484,9 @@ document.addEventListener("DOMContentLoaded", function(){
     leftArrowButton.querySelector('img').src = microsoft.arrows.left;
     rightArrowButton.querySelector('img').src = microsoft.arrows.right;
 
-    // const removeAllActiveClasses = () =>{
-    //     stickyNav.forEach((tab) => {
-    //         tab.classList.remove("active")
-    //     })
-    // }
-    // stickyNav.forEach(tab=>{
-    // tab.addEventListener('click', ()=>{
-    //     removeAllActiveClasses();
-    //     tab.classList.add("active")
-    // })
-    // })
-
     const container = document.querySelector('.nav_left');
     const leftArrowContainer = document.getElementById('l_arw');
     const rightArrowContainer = document.getElementById('r_arw');
-
-    // leftArrowButton.addEventListener('click', function() {
-    //     // container.scrollBy({
-    //     //     left: -100,
-    //     //     behavior: 'smooth'
-    //     // });
-    //     // container.scrollLeft += 500
-    // });
-
 
     // ...................... scroll features when arrow button is clicked ...............................
 
@@ -441,6 +504,24 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
+    // ----------------------------
+    const stickyLeftNav = document.querySelector('.stickynav');
+    stickyLeftNav.addEventListener('click', () => {
+        // Check if the screen width is less than 860px
+        if (window.innerWidth < 860) {
+            const hiddenUl = document.querySelector('.hidden-ul');
+            const clickArrow = document.getElementById('dwn_arw');
+    
+            if (hiddenUl.style.display === 'none' || hiddenUl.style.display === '') {
+                hiddenUl.style.display = 'block';
+            } else {
+                hiddenUl.style.display = 'none';
+            }
+    
+            clickArrow.classList.toggle('in-active');
+        }
+    });
+    
     // ................................................................................................................
           
     const sectionOneBgMOb = document.getElementById("sec1_bgMob").src = microsoft.main.section1.bgMob
@@ -464,9 +545,13 @@ document.addEventListener("DOMContentLoaded", function(){
     const sectionTwoSubHd = document.querySelector('.sol').innerHTML = microsoft.main.section2.subhead
     const sectionTwoHd = document.querySelector('.head2').innerHTML = microsoft.main.section2.head
     const contentA = document.querySelector('.contentA')
-    microsoft.main.section2.features.forEach(item =>{
+    microsoft.main.section2.features.forEach((item,idx) =>{
         const feats = document.createElement('button')
         feats.className = 'btn'
+
+        if(idx === 0){
+            feats.classList.add('active')
+        }
         feats.innerHTML = `<span>${item}</span>`
       contentA.append(feats)
     })
@@ -478,11 +563,15 @@ document.addEventListener("DOMContentLoaded", function(){
         lis.innerHTML = `
         <span class='indicator'></span>
         <div class='conts'>
-        <div class='cont1'> <button>${item.text} ${item.btn}</button></div>
+        <div class='cont1'> <button>${item.text} <img src="${item.btn}"></button></div>
         <div class='cont2'>
+            <div class='cont2A'>
             <p>${item.p}</p>
-            <a href='#'>${item.a}</a>
-            <div class='image'><img src ='${item.image}'></div>
+            <div class='inCont2A'>
+                <div class='cont2Aa'><a href='#'>${item.a}</a></div>
+                <div class='image'><img src ='${item.image}'></div>
+        </div>
+        </div>
         </div>
         </div>
         `
@@ -505,8 +594,22 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     };
 
+    let contentOne = document.querySelectorAll('.cont1')
+    let contentTwo = document.querySelectorAll('.cont2')
+
+    contentOne.forEach((item,idx) =>{
+        item.addEventListener('click',() =>{
+            contentTwo.forEach((cont2) =>{
+                cont2.classList.remove('show')
+            })
+            contentTwo[idx].classList.toggle('show')
+        })
+    })
+
     
     // .........................
+
+
 
     }
 
