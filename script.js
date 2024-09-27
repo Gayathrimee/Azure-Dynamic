@@ -214,10 +214,60 @@ const microsoft = {
                     image:'images/AI-img5-351994-Desktop-Solutions-Featured-Tab5-800x636.avif'
                 }
             ],
-            arrw:'',
+            arrw:'images/arrow_right.svg',
             a:'View all solutions(40+)'
+        },
+
+        section3:{
+            bg1:'images/sec3-539-Mobile-product-BG-2x.avif',
+            bg2:'images/sec-3-1200-Desktop-product-BG-4x-070924ACOMhp.avif',
+            subhead:'products and services',
+            head:'Explore tools for bringing your vision to life',
+            features:[
+                'Featured','AI + machine learning', 'Compute','Containers','Hybrid + multicloud','loT'
+            ],
+            picture:'images/sec3-cardImg-Desktop-CardGrid-ProductandServices-PromoCard-320x592.avif',
+            Txt:'Azure AI Content Safety',
+            p:'Use AI to monitor text and image content for safety.',
+            btnTxt:'Explore the product',
+            cards:[
+                {
+                    img:'images/1-ProductandServices-Featured-AzureAIStudio-28x28.svg',
+                    h2:'Azure AI Studio',
+                    span:'Build, evaluate, and deploy generative AI Solutions and custom copilots.'
+                },
+                {
+                    img:'images/2-ProductandServices-Featured-AzureOpenAIService-28x28.svg',
+                    h2:'Azure OpenAI Service',
+                    span:'Build your own copilot and generative AI applications.'
+                },
+                {
+                    img:'images/3-ProductandServices-Featured-AzureAIDocumentIntelligence-28x28.svg',
+                    h2:'Azure AI Document Interlligence',
+                    span:'Accelerate information extraction from documents'
+                },
+                {
+                    img:'images/4-ProductandServices-Featured-AzureAISearch-28x28.svg',
+                    h2:'Azure AI Search',
+                    span:'Deliver high-quality responses with a vector database built for advanced RAG and modern search.'
+                },
+                {
+                    img:'images/5-ProductandServices-Featured-GitHubAdvancedSecurity-28x28.svg',
+                    h2:'Github Advanced Security',
+                    span:'Empower your developers to fix security issues faster and reduce overall security risk.'
+                },
+                {
+                    img:'images/6-ProductandServices-Logos-Featured-MicrosoftDefenderforCloud-28x28.svg',
+                    h2:'Microsoft Defender for Cloud',
+                    span:'Help protect multicloud and hybrid environments with comprehensive security.'
+                },
+            ],
+            span:'Explore the product',
+            a:'See all products(200+)'
         }
 
+
+    // -------------
     }
 
 }
@@ -397,6 +447,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // ..........................................................................
 
+        // sec1
+
         const azureTxt = document.getElementById("text-azure")
         azureTxt.innerHTML = microsoft.header.txt
         
@@ -523,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     
     // ................................................................................................................
-          
+        
     const sectionOneBgMOb = document.getElementById("sec1_bgMob").src = microsoft.main.section1.bgMob
     const sectionOneBgDesk = document.getElementById("sec1_bgDesk").src = microsoft.main.section1.bgMob
     const innoVation2 = document.getElementById("feature").innerHTML = microsoft.main.section1.subhead
@@ -542,9 +594,12 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     // .........................
+
+    // sec2
     const sectionTwoSubHd = document.querySelector('.sol').innerHTML = microsoft.main.section2.subhead
     const sectionTwoHd = document.querySelector('.head2').innerHTML = microsoft.main.section2.head
     const contentA = document.querySelector('.contentA')
+
     microsoft.main.section2.features.forEach((item,idx) =>{
         const feats = document.createElement('button')
         feats.className = 'btn'
@@ -578,7 +633,8 @@ document.addEventListener("DOMContentLoaded", function(){
         theUls.append(lis)
         bWrites.append(theUls)
     })
-    const btn = document.getElementById('btn').src = microsoft.main.section2.arrw
+    const btn = document.getElementById('btn')
+    btn.innerHTML = `<img src ='${microsoft.main.section2.arrw}'>`
     const view = document.getElementById('view').innerHTML = microsoft.main.section2.a  
 
     const buttons = document.querySelectorAll('.btn');
@@ -596,9 +652,31 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let contentOne = document.querySelectorAll('.cont1')
     let contentTwo = document.querySelectorAll('.cont2')
+    let Indicator = document.querySelectorAll('.Bwrites  ul li .indicator')
+
+    function aiBtn(){
+        contentOne.forEach((btn) =>{
+            btn.classList.remove('rotate')
+        })
+    }
+
+    function indicatorFlow(){
+        Indicator.forEach(ind =>{
+            ind.classList.remove('flow')
+        })
+        console.log('its indicator')
+    }
 
     contentOne.forEach((item,idx) =>{
         item.addEventListener('click',() =>{
+           
+            aiBtn()
+            item.classList.add('rotate')
+
+            indicatorFlow()
+            Indicator[idx].classList.add('flow')
+            console.log('not working')
+
             contentTwo.forEach((cont2) =>{
                 cont2.classList.remove('show')
             })
@@ -607,10 +685,74 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     
+    // ......................... 
+    // sec3
+    
+    const secThreeBgOne = document.getElementById('sec3_bgMob').src = microsoft.main.section3.bg1
+    const secThreeBgTwo = document.getElementById('sec3_bgDesk').src = microsoft.main.section3.bg2 
+    const secThreeSubhead = document.querySelector('.pro').innerHTML = microsoft.main.section3.subhead
+    const secThreeHead = document.querySelector('.head3').innerHTML = microsoft.main.section3.head
+    const secThreeContentA = document.getElementById('contentAsec3')
+
+    microsoft.main.section3.features.forEach((item,idx) =>{
+        const feats = document.createElement('button')
+        feats.className = 'btn'
+
+        if(idx === 0){
+            feats.classList.add('active')
+        }
+        feats.innerHTML = `<span>${item}`
+        secThreeContentA.append(feats)
+    })
+
+    const innerPicture = document.querySelector('.inner3-pic')
+    innerPicture.innerHTML = `<img src='${microsoft.main.section3.picture}'>`
+    const innerThreeNote = document.querySelector('.inner3-note')
+    const innerHead = document.createElement('h3')
+    innerHead.innerHTML = microsoft.main.section3.Txt
+    const innerPara = document.createElement('p')
+    innerPara.innerHTML = microsoft.main.section3.p
+    const innerBtnTxt = document.createElement('button')
+    innerBtnTxt.innerHTML = microsoft.main.section3.btnTxt
+
+    innerThreeNote.append(innerHead,innerPara,innerBtnTxt)
+
+    const innerThreeSecond = document.querySelector('.inner3-2-flex')
+    microsoft.main.section3.cards.forEach(card =>{
+        const theCard = document.createElement('div')
+        theCard.className = 'each-card'
+        const inTheCard = document.createElement('div')
+        inTheCard.className = 'the-card'
+
+        const cardPic = document.createElement('div')
+        cardPic.className = 'card-pic'
+        const cardPicImg = document.createElement('img')
+        cardPicImg.src = card.img
+        cardPic.append(cardPicImg)
+
+        const cardContents = document.createElement('div')
+        cardContents.className = 'card-cont'
+        const cardContentHead = document.createElement('h4')
+        cardContentHead.innerHTML = card.h2
+        const cardContentSpan = document.createElement('span')
+        cardContentSpan.innerHTML = card.span
+        const cardContentPara =  document.createElement('a')
+        cardContentPara.innerHTML = microsoft.main.section3.span
+        cardContentPara.href = '#'
+        cardContents.append(cardContentHead,cardContentSpan,cardContentPara)
+
+        inTheCard.append(cardPic,cardContents)
+        theCard.append(inTheCard)
+        innerThreeSecond.append(theCard)
+
+    })
+
+    const btnTwo = document.getElementById('btn2')
+    btnTwo.innerHTML = `<img src =${microsoft.main.section2.arrw}>`
+    const SeeProducts = document.getElementById('see').innerHTML = microsoft.main.section3.a
+
     // .........................
-
-
-
+        
     }
 
     buildTeamsPage()
