@@ -220,7 +220,7 @@ const microsoft = {
 
         section3:{
             bg1:'images/sec3-539-Mobile-product-BG-2x.avif',
-            bg2:'images/sec-3-1200-Desktop-product-BG-4x-070924ACOMhp.avif',
+            bg2:'images/sec-3-2400-Desktop-product-BG-4x-070924ACOMhp.avif',
             subhead:'products and services',
             head:'Explore tools for bringing your vision to life',
             features:[
@@ -264,6 +264,15 @@ const microsoft = {
             ],
             span:'Explore the product',
             a:'See all products(200+)'
+        },
+
+        section4:{
+            bg1:'images/sec4-Mobile-Gartner-BG-2x.avif',
+            bg2:'images/sec4-Desktop-Gartner-BG@4x.avif',
+            img:'images/sec4-gartner-accouncement-1_newimage.avif',
+            h2:'See why Gartner named Microsoft a Leader',
+            p:'Discover why Microsoft was named a Leader and positioned furthest to the right for Completeness of Vision in the 2023 Gartner Magic Quadrant for Strategic Cloud Platform Services(SCPS).',
+            a:'Read the blog'
         }
 
 
@@ -668,6 +677,10 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     contentOne.forEach((item,idx) =>{
+         if(idx === 0){
+                contentTwo[idx].classList.add('show')
+            }
+            
         item.addEventListener('click',() =>{
            
             aiBtn()
@@ -681,6 +694,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 cont2.classList.remove('show')
             })
             contentTwo[idx].classList.toggle('show')
+           
         })
     })
 
@@ -705,6 +719,19 @@ document.addEventListener("DOMContentLoaded", function(){
         secThreeContentA.append(feats)
     })
 
+    const featBtn = document.querySelectorAll('.btn')
+    featBtn.forEach(btn => {
+        btn.addEventListener('click', () =>{
+            removeFeatActive()
+            btn.classList.add('active')
+        })
+    })
+    function removeFeatActive(){
+        featBtn.forEach(btn =>{
+            btn.classList.remove('active')
+        })
+    }
+
     const innerPicture = document.querySelector('.inner3-pic')
     innerPicture.innerHTML = `<img src='${microsoft.main.section3.picture}'>`
     const innerThreeNote = document.querySelector('.inner3-note')
@@ -712,7 +739,7 @@ document.addEventListener("DOMContentLoaded", function(){
     innerHead.innerHTML = microsoft.main.section3.Txt
     const innerPara = document.createElement('p')
     innerPara.innerHTML = microsoft.main.section3.p
-    const innerBtnTxt = document.createElement('button')
+    const innerBtnTxt = document.createElement('a')
     innerBtnTxt.innerHTML = microsoft.main.section3.btnTxt
 
     innerThreeNote.append(innerHead,innerPara,innerBtnTxt)
@@ -752,7 +779,13 @@ document.addEventListener("DOMContentLoaded", function(){
     const SeeProducts = document.getElementById('see').innerHTML = microsoft.main.section3.a
 
     // .........................
-        
+    // sec4
+    const secFourBgMob = document.querySelector('.sec3-mob').src = microsoft.main.section4.bg1
+    const secFourBgDesk = document.querySelector('.sec3-desk').src = microsoft.main.section4.bg2  
+    
+
+
+
     }
 
     buildTeamsPage()
