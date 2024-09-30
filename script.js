@@ -271,8 +271,56 @@ const microsoft = {
             bg2:'images/sec4-Desktop-Gartner-BG@4x.avif',
             img:'images/sec4-gartner-accouncement-1_newimage.avif',
             h2:'See why Gartner named Microsoft a Leader',
-            p:'Discover why Microsoft was named a Leader and positioned furthest to the right for Completeness of Vision in the 2023 Gartner Magic Quadrant for Strategic Cloud Platform Services(SCPS).',
+            p:'Discover why Microsoft was named a Leader and positioned furthest to the right for Completeness of Vision in the 2023 Gartner® Magic Quadrant™ for Strategic Cloud Platform Services (SCPS).',
             a:'Read the blog'
+        },
+        section5:{
+            bg1:'images/sec5-Mobile-Interactive-Demo-BG-2x.webp',
+            bg2:'images/sec5-Desktop-Interactive-Demo-BG-4x-070924ACOMhp-2.avif',
+            p:'resources by role',
+            h2:'Transform the way you work',
+            features:[
+                'IT professionals','Developers','Data analysts','Business leaders','Startups','Students'
+            ],
+            rightBtn:'images/arrow_right copy.svg',
+            leftBtn:'images/arrow_right copy.svg',
+            uls:[
+                {
+                    h3:'Optimize your infrastructure with popular Azure solutions and services.',
+                    a:'Explore migration solutions',
+                    arrw:'images/arrow_right.svg',
+                    img:'images/sec5-Resources-tab1-ITProfessionals-4x.avif'
+                },
+                {
+                    h3:"Create today's solutions and tomorrow's breakthrough",
+                    a:'Innovate on Azure',
+                    arrw:'images/arrow_right.svg',
+                    img:'images/sec5-tab2-Resources-tab2-Developers@4x.avif'
+                },
+                {
+                    h3:'Get more value from your data with an end-to-end cloud analysts solution.',
+                    a:'Explore AI for data analytics',
+                    arrw:'images/arrow_right.svg',
+                    img:'images/sec5-Resources-tab3-DataAnalysts@4x.avif'
+                },
+                {
+                    h3:'Get guidance and insights on AI innovation, intelligent datam cloud infrastructure, and optimization.',
+                    a:'Explore insights',
+                    arrw:'images/arrow_right.svg',
+                    img:'images/sec5-Resources-tab4-BusinessLeaders@4x.avif'
+                },
+                {
+                    h3:'Future-proof your startup with AI services, expert guidancem and essential technology.',
+                    a:'Explore Microsoft for Startups',
+                    arrw:'images/arrow_right.svg',
+                    img:'images/sec5-Resources-tab5-Startups@4x.avif'
+                },
+                {
+                    h3:'Learn about programming, cloud technologies, and developer tools.',
+                    a:'Jump-start your career',
+                    img:'images/sec5-Resources-tab6-Students-4x.avif'
+                }
+            ]
         }
 
 
@@ -568,7 +616,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // ----------------------------
     const stickyLeftNav = document.querySelector('.stickynav');
     stickyLeftNav.addEventListener('click', () => {
-        // Check if the screen width is less than 860px
+
         if (window.innerWidth < 860) {
             const hiddenUl = document.querySelector('.hidden-ul');
             const clickArrow = document.getElementById('dwn_arw');
@@ -646,6 +694,7 @@ document.addEventListener("DOMContentLoaded", function(){
     btn.innerHTML = `<img src ='${microsoft.main.section2.arrw}'>`
     const view = document.getElementById('view').innerHTML = microsoft.main.section2.a  
 
+    // ----fn
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -698,7 +747,6 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     })
 
-    
     // ......................... 
     // sec3
     
@@ -781,10 +829,193 @@ document.addEventListener("DOMContentLoaded", function(){
     // .........................
     // sec4
     const secFourBgMob = document.querySelector('.sec3-mob').src = microsoft.main.section4.bg1
-    const secFourBgDesk = document.querySelector('.sec3-desk').src = microsoft.main.section4.bg2  
-    
+    const secFourBgDesk = document.querySelector('.sec3-desk').src = microsoft.main.section4.bg2 
 
+    const secFourInit = document.querySelector('.sec4init')
+    const GartnerImg = document.createElement('div')
+    GartnerImg.className = 'GartnerImg'
+    const gartnerPic = document.createElement('img')
+    gartnerPic.src = microsoft.main.section4.img
+    GartnerImg.append(gartnerPic)
 
+    const gartnerContent = document.createElement('div')
+    gartnerContent.className = 'gartnerContent'
+
+    const gartnerContentEmpty = document.createElement('div')
+    gartnerContentEmpty.className = 'gartnerContentEmpty'
+    gartnerContentEmpty.innerHTML = ''
+
+    const gartnerContentTop = document.createElement('div')
+    gartnerContentTop.className = 'gartnerContentTop'
+    const gartnerTopH2 = document.createElement('h2')
+    gartnerTopH2.innerHTML = microsoft.main.section4.h2
+    const gartnerTopP = document.createElement('p')
+    gartnerTopP.innerHTML = microsoft.main.section4.p
+    gartnerContentTop.append(gartnerTopH2,gartnerTopP)
+
+    const gartnerContentBottom = document.createElement('div')
+    gartnerContentBottom.className = 'gartnerContentBottom'
+    const gartnerBottomA = document.createElement('a')
+    gartnerBottomA.innerHTML = microsoft.main.section4.a
+    gartnerBottomA.href = 'https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-2023-gartner-magic-quadrant-for-strategic-cloud-platform-services-scps/'
+    gartnerContentBottom.append(gartnerBottomA)
+
+    gartnerContent.append(gartnerContentEmpty,gartnerContentTop, gartnerContentBottom)
+
+    secFourInit.append(GartnerImg)
+    secFourInit.append(gartnerContent)
+
+     // .........................
+    // sec5
+    const sectionFiveOne = document.querySelector('.section5-1')
+    const sectionFiveUp = document.createElement('div')
+    sectionFiveUp.className = 'section5-up'
+    const sectionFivePadding = document.createElement('div')
+    sectionFivePadding.className = 'sec5-pad'
+
+    const TopSecFiveContents = document.createElement('div')
+    TopSecFiveContents.className = 'sec5-conts'
+    const secFiveContentP = document.createElement('p')
+    secFiveContentP.className = 'res'
+    secFiveContentP.id = 'feature'
+    secFiveContentP.innerHTML = microsoft.main.section5.p
+    const secFiveContenth2 = document.createElement('h2')
+    secFiveContenth2.className = 'head5'
+    secFiveContenth2.id = 'head'
+    secFiveContenth2.innerHTML = microsoft.main.section5.h2
+    TopSecFiveContents.append(secFiveContentP,secFiveContenth2)
+
+    sectionFivePadding.append(TopSecFiveContents)
+    sectionFiveUp.append(sectionFivePadding)
+    sectionFiveOne.append(sectionFiveUp)
+
+    // section5-2
+    const secFiveBgOne = document.querySelector('.sec5-mob')
+    secFiveBgOne.src = microsoft.main.section5.bg1
+    const secFiveBgTwo = document.querySelector('.sec5-desk')
+    secFiveBgTwo.src = microsoft.main.section5.bg2 
+
+    const secFiveFeatures = document.querySelector('.res-tabs')
+    microsoft.main.section5.features.forEach((item) =>{
+        const featureLists = document.createElement('div')
+        featureLists.className = 'sec5-feat-list'
+        const featureButton = document.createElement('a')
+        featureButton.id = 'featureButton'
+        featureButton.className = 'featureButton'
+        featureButton.innerHTML = `<div class='trans'> ${item} </div`
+        
+        featureLists.append(featureButton)
+        secFiveFeatures.append(featureLists)
+    })
+
+    const secFiveUls = document.getElementById('sec5-uls')
+    microsoft.main.section5.uls.forEach(item => {
+        const secfiveUl = document.createElement('div')
+        secfiveUl.className = 'each-ul'
+        const fiveUlTop = document.createElement('div')
+        fiveUlTop.className = 'sec5-ul-top'
+        const fiveUlSpan = document.createElement('h3')
+        fiveUlSpan.innerHTML = item.h3
+        
+        const fiveUlArrwA = document.createElement('div')
+        fiveUlArrwA.className = 'feat-a'
+        const fiveUlBtn = document.createElement('button')
+        fiveUlBtn.innerHTML = `<img src = '${item.arrw}'>` 
+        const fiveUlA = document.createElement('p')
+        fiveUlA.innerHTML = item.a
+
+         const fiveUlBot = document.createElement('div')
+        fiveUlBot.className = 'sec5-ul-bot'
+        const fiveUlImg = document.createElement('img')
+        fiveUlImg.src = item.img 
+
+        fiveUlArrwA.append(fiveUlBtn,fiveUlA)
+        fiveUlTop.append(fiveUlSpan,fiveUlArrwA)
+        fiveUlBot.append(fiveUlImg)
+        secfiveUl.append(fiveUlTop,fiveUlBot)
+        secFiveUls.append(secfiveUl)
+    })
+    const secFiveArrows = document.querySelector('.res-arrows')
+    const fiveRightArrw = document.createElement('button')
+    fiveRightArrw.className = 'right'
+    const fiveRightImg = document.createElement('img')
+    fiveRightImg.src = microsoft.main.section5.rightBtn
+    fiveRightArrw.append(fiveRightImg)
+
+    const fiveLeftArrw = document.createElement('button')
+    fiveLeftArrw.className = 'left'
+    const fiveLeftImg = document.createElement('img')
+    fiveLeftImg.src = microsoft.main.section5.leftBtn
+    fiveLeftArrw.append(fiveLeftImg)
+    secFiveArrows.append(fiveLeftArrw,fiveRightArrw)
+
+    // ---arrow-scroll fn
+    const resOverflow = document.querySelector('.res-overflow')
+
+    fiveLeftArrw.style.visibility = 'hidden'
+    function updateArrowVisibility(){
+        if(resOverflow.scrollLeft === 0){
+            fiveLeftArrw.style.visibility = 'hidden'
+        } else{
+            fiveLeftArrw.style.visibility = 'visible'
+        }
+
+        if(resOverflow.scrollLeft + resOverflow.clientWidth >= resOverflow.scrollWidth){
+            fiveRightArrw.style.visibility = 'hidden'
+        } else{
+            fiveRightArrw.style.visibility = 'visible'
+        }
+    }
+
+    resOverflow.addEventListener('scroll', updateArrowVisibility)
+
+    fiveRightArrw.addEventListener('click',() =>{
+        resOverflow.scrollBy({
+            left: 500,
+            behavior:"smooth"
+        })
+        console.log('left')
+
+    })
+    fiveLeftArrw.addEventListener('click', () =>{
+        resOverflow.scrollBy({
+            left: -500,
+            behavior:"smooth"
+        })
+    })
+    // ---------
+
+    let secFiveFeats = document.querySelectorAll('.sec5-feat-list')
+    let secFiveEachUl = document.querySelectorAll('.each-ul')
+
+    function removeProfession(){
+        secFiveFeats.forEach(item =>{
+            item.classList.remove('profession')
+        })
+    }
+    function removeProf(){
+        secFiveEachUl.forEach(ul =>{
+            ul.classList.remove('prof')
+        })
+    }
+
+    secFiveFeats.forEach((feat,idx) => {
+        if(idx === 0){
+            feat.classList.add('profession')
+            secFiveEachUl[idx].classList.add('prof')
+        }
+
+        feat.addEventListener('click', ()=>{
+            removeProfession()
+            removeProf()
+
+            feat.classList.add('profession')
+            secFiveEachUl[idx].classList.add('prof')
+        })
+    })
+    // -------------------
+
+    // .........................
 
     }
 

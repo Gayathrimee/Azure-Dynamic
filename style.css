@@ -1029,7 +1029,8 @@ form{
     background-color: #fff;
     border-radius: 1rem;
     width: 100%;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    /* box-shadow:0 0 0.125rem rgba(0, 0, 0, 0.12), 0 0 0.125rem 0.25rem rgba(0, 0, 0, 0.14); */
+    box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.125rem 0.25rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
 }
 .the-card{
     padding: 1rem;
@@ -1076,6 +1077,227 @@ form{
     font-weight: 600;
     cursor: pointer;
 }
+
+/*          ___sec4___  */
+.insec4{
+    margin-top: 1.5rem;
+    padding-inline: 4px;
+}
+.sec4init .GartnerImg img{
+    width: 100%;
+    border-radius: 1rem;
+    height: 100%;
+    object-fit: cover;
+}
+.sec4init .GartnerImg{
+    padding-top: 8px;
+    padding-inline: 12px;
+}
+.sec4init{
+    display: block;
+    border: 0.0625rem solid #e6f2fb;
+    border-radius: 1rem;
+    background-color: #fefefe;
+    height: 100%;
+    box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.125rem 0.25rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
+}
+.sec4init .gartnerContent{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.sec4init .gartnerContentTop{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    text-align: left;
+}
+.gartnerContentTop h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    letter-spacing: -0.05em;
+    font-family: segoe-medium;
+}
+.gartnerContentTop p{
+    font-size: 1.12rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: -0.03em;
+    font-family: segoe-regular;
+}
+.gartnerContentBottom{
+    display: flex;
+    justify-content: flex-start;
+}
+.gartnerContentBottom a{
+    flex-grow: 1;
+    background-color: #0078d4;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: segoe-semibold;
+    letter-spacing: -0.03em;
+    border-radius: 0.5rem;
+    border: 2px solid #0078d4;
+}
+/*          ___sec5___  */
+.section5{
+    background-color: #f4fafd;
+}
+.section5-up{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-inline: -0.25rem;
+    margin-bottom: calc(1rem + calc(0.25rem + 1.5rem));
+}
+.sec5-pad{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-inline: 0.25rem;
+}
+.sec5-conts{
+    margin-bottom: 1.5rem;
+    padding-top: 3rem;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.sec5-conts .res,
+.sec5-conts .head5{
+    width: 100%;
+}
+.section5-2{
+    margin-top: -60px;
+    padding-inline: 1rem;
+    max-width: calc(1328px + 0.5rem);
+    margin-inline: auto;
+    position: relative;
+}
+.sec5-features{
+    position: relative;
+    z-index: 1;
+}
+.res-overflow{
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.res-tabs{
+    display: flex;
+    flex-wrap: nowrap;
+    /* font-size: 20px; */
+    padding-block: 8px;
+    padding-left: 8px;
+}
+.sec5-feat-list{
+    min-width: max-content;
+    border: 1px solid #fefefe;
+    box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.063rem 0.125rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
+    background-color: #fff;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: calc(1328px / 6);
+}
+.sec5-feat-list a{
+    max-width: calc(1328px / 6);
+    box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.063rem 0.125rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
+    background-color: #fff;
+    width: 100%;
+}
+.trans{
+    padding: 1rem;
+    padding-top: 0.75rem;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: segoe-semibold;
+}
+.sec5-feat-list:first-of-type{
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.sec5-feat-list:last-of-type{
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.sec5-feat-list.profession{
+    border-bottom: 4px solid #0078d4;
+}
+.sec5-uls{
+    padding-block-start: 1.5rem;
+    padding-block-end: 3rem;
+    position: relative;
+}
+.each-ul{
+    display: none;
+}
+.each-ul.prof{
+    display: block;
+}
+.sec5-ul-top{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+}
+.sec5-ul-bot{
+    margin-top: 1.5rem;
+    padding: 1rem;
+    box-shadow:0 0 0.25rem rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.1);
+    aspect-ratio: 1.77778;
+    border-radius: 1rem;
+}
+.sec5-ul-bot img{
+    border-radius: 1rem;
+    width: 100%;
+}
+.sec5-ul-top h3{
+    font-family: segoe-semibold;
+    letter-spacing: -0.03em;
+}
+.sec5-ul-top a{
+    font-family: segoe-regular;
+}
+.arrw-a img{
+    width: 16px;
+    background-color: #005597;
+    /* padding: 8px; */
+    border: 1px solid #005597;
+    border-radius: 5px
+}
+.res-arrows{
+    background-color: #fff;
+}
+.res-arrows img{
+    width: 26px;
+}
+.res-arrows .left img{
+    transform: rotate(180deg);
+}
+.res-arrows button{
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #004275;
+    top: calc(50% - 36px / 2);
+    background-color: transparent;
+    position: absolute;
+    background-color: #fff;
+}
+.res-arrows .right{
+    right: 10px;
+}
+
 
 /* ==================== media queries ================ */
 
@@ -1131,6 +1353,9 @@ form{
 }
 .inner3-note a{
     max-width: 154px;
+}
+.section5-2{
+    padding-inline: 3rem;
 }
 }
 
@@ -1396,6 +1621,29 @@ form{
 .inner3-note{
     padding: 24px;
 }
+.sec4init{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.sec4init .gartnerContent{
+    flex: 0 0 50%;
+    max-width: 50%;
+    gap: 6rem;
+    padding: 1.5rem;
+    padding-inline-end: 3.5rem;
+    padding-inline-start: 1rem;
+}
+.sec4init .GartnerImg{
+    padding-inline: 0;
+    padding: 0;
+    padding-block: 8px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.gartnerContentBottom a{
+    flex-grow: 0;
+}
+
 
 }  
 
@@ -1633,6 +1881,12 @@ form{
 .inner3-note h3{
     font-size: 2rem;
     line-height: 2.5rem;
+}
+.gartnerContentTop h2{
+    font-size: 2rem;
+}
+.gartnerContentTop p{
+    font-size: 1.255rem;
 }
 
 }
