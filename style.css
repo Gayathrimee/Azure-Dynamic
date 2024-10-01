@@ -5,6 +5,10 @@
     --bg-val:var(linear-gradient(131deg, #003259 0%, #091f2c 50.25%, #004275 100%), #0078d4)
     /* overflow-x: hidden; */
 }
+:root{
+    --root-depth-color-1:rgba(0,0,0,0.12);
+    --root-depth-color-2:rgba(0,0,0,0.14)
+}
 @font-face {
     font-family: "azure-norms-bold";
     src: url("fonts/TTNorms-Bold.woff2");
@@ -1175,6 +1179,9 @@ form{
     width: 100%;
 }
 .section5-2{
+    position: relative;
+}
+.sec5-feat-uls{
     margin-top: -60px;
     padding-inline: 1rem;
     max-width: calc(1328px + 0.5rem);
@@ -1253,6 +1260,7 @@ form{
     padding: 1rem;
     box-shadow:0 0 0.25rem rgba(255,255,255,0.1);
     background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
     aspect-ratio: 1.77778;
     border-radius: 1rem;
 }
@@ -1298,6 +1306,231 @@ form{
     right: 10px;
 }
 
+/*          ___sec5___  */
+.sec-6-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-family: segoe-semibold;
+}
+#sec6_bgMob{
+    object-fit: cover;
+}
+.sec-6-content h2{
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.05em;
+}
+.sec-6-content p{
+    color: #dceef8;
+    margin: 1rem 0 0;
+    padding-inline: 1rem;
+    font-family: segoe-regular;
+}
+.sec-6-content a{
+    margin: 1.5rem 0 0;
+    background-color: #b3daf0;
+    color: #000;
+    font-size: 0.9375rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.02em;
+    padding: 0.75rem;
+    border: 2px solid #b3daf0;
+    border-radius: 0.5rem;
+    display: inline-block;
+    justify-content: center;
+}
+
+/*          ___sec7___  */
+.sec7-scroll{
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    margin-bottom: 82px;
+    white-space: nowrap;
+    scroll-snap-type: x  mandatory;
+    scroll-snap-align: start  !important;
+}
+.sec7-botm-cont{
+    display: flex;
+    column-gap: 0.85rem;
+    row-gap: 0.5rem;
+    border-radius: 0.5rem;
+}
+.sec7-item{
+    flex: 0 0 calc(calc(100% - calc(0.75rem * (1))) / 1);
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 3px;
+    box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.125rem 0.25rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 222222;
+}
+.sec7-image{
+    padding-inline: 0.5rem;
+    padding-block-start: 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+.sec7-image img{
+    width: 100%;
+    border-radius: 0.5rem;
+    aspect-ratio: initial;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.sec7-content{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+    flex: 1 1 auto;
+    position: relative;
+}
+.cont-top{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.cont-top-img{
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    width: inherit;
+    border-radius:inherit;
+}
+.cont-top-img img{
+    border: 0.0625rem solid #bdc5d2;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+}
+.cont-top h3{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.05em;
+    display: block;
+    width: 100%;
+    white-space:wrap;
+    font-family: segoe-semibold;
+}
+.cont-botm{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+.contBotm-up{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #0e1726;
+    font-family: segoe-regular;
+}
+.contBotm-up p{
+    font-size: 1rem;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+}
+.contBotm-up ul{
+    display: flex;
+    gap: 0.75rem;
+    list-style-type: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.contBotm-up ul li{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    column-gap: 0.5rem;
+}
+.sec7-ul-img{
+    width: 20px;
+    height: 100%;
+    max-width: 100%;
+    max-height: 20px;
+}
+.sec7-ul-a{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+}
+.sec7-ul-a a{
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: #0067b8;
+}
+.contBotm-down{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.contBotm-down a{
+    color: #fff;
+    border: 2px solid transparent;
+    padding: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    background-color: #0078d4;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-family: segoe-semibold;
+    display: flex;
+    justify-content: center;
+}  
+.sec7-btns{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 1;
+    width: 100%;
+    gap: 0.5rem;
+}
+.sec7-btns button{
+    /* padding: calc((0.75rem + 1px)calc(0.75rem + 2px) calc(0.75rem + 1px) 0.75rem); */
+    padding-block: 13px;
+    padding-inline-start: 12px;
+    padding-inline-end: 14px;
+    border-radius: 50%;
+    border: 2px solid ;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+.sec7-btns button img{
+    width: 26px;
+    height: 26px;
+}
+.sec7-btn-right{
+    transform: rotate(180deg);
+}
+.sec7-ols{
+    display: none;
+}
+
+                                                                          
+
 
 /* ==================== media queries ================ */
 
@@ -1311,6 +1544,12 @@ form{
 }
 .sec1_content{
     padding-inline: 1rem;
+}
+.sec-6-content a{
+    width: 100%;
+}
+.contBotm-down a{
+    width: 100%;
 }
 }
 
@@ -1354,8 +1593,11 @@ form{
 .inner3-note a{
     max-width: 154px;
 }
-.section5-2{
+.sec5-feat-uls{
     padding-inline: 3rem;
+}
+.contBotm-down a{
+    width: 25%;
 }
 }
 
@@ -1643,6 +1885,44 @@ form{
 .gartnerContentBottom a{
     flex-grow: 0;
 }
+.sec5-ul-bot{
+    width: 66.6%;
+    margin-inline: auto;
+    margin-top: 2rem;
+    padding: 1.5rem;
+}
+.sec5-conts #head{
+    font-size: 1.75rem;
+}
+.sec-6-content h2{
+    font-size: 2.5rem;
+}
+.sec7-ols{
+    display: block;
+}
+.sec7-item{
+    flex-direction: row-reverse;
+    border-radius: 1rem;
+}
+.sec7-image{
+    padding: 0;
+    padding-block: 8px;
+    padding-inline-end: 8px;
+}
+.sec7-image img{
+    border-radius: 1rem;
+}
+.sec7-content{
+    padding: 1.5rem;
+    flex:0 0 50%;
+    gap: 2rem; 
+} 
+.cont-top{
+    gap: 1rem;
+}
+.contBotm-down a{
+    padding-inline: 16px;
+}
 
 
 }  
@@ -1888,6 +2168,34 @@ form{
 .gartnerContentTop p{
     font-size: 1.255rem;
 }
+#head{
+    font-size: 2rem;
+}
+.sec5-conts #head{
+    font-size: 2.5rem;
+}
+.sec5-feat-uls{
+    padding-inline: 0;
+    width: 100%;
+}
+.res-arrows{
+    display: none;
+}
+.section5-up{
+    margin-bottom: calc(1rem + calc(0.25rem + 2rem) );
+}
+.sec5-conts{
+    margin-bottom: 2rem;
+    padding-top: 4.5rem;
+}
+.sec-6-content h2{
+    font-size: 3rem;
+}
+.sec-6-content p{
+    margin-top: 1.5rem;
+    padding-inline: 3rem;
+    font-size: 1.125rem;
+}
 
 }
 
@@ -1942,4 +2250,7 @@ form{
 .azure-text a{
     padding-left:23px;
 }
+#sec6_bgMob{
+    height: 115%;
+}                                    
 }   

@@ -321,6 +321,126 @@ const microsoft = {
                     img:'images/sec5-Resources-tab6-Students-4x.avif'
                 }
             ]
+        },
+
+        section6:{
+            bg:'images/sec6-Desktop-AzureRegions-2x.avif',
+            h2:'Azure global infrastructure',
+            p:'Go beyond the limits of on-premises datacenters with more regions than any other provider.',
+            a:'Explore the globe'
+        },
+
+        section7:{
+            bg:'images/sec7-Desktop-CustomerStories-BG@4x-1.jpeg',
+            p:'customer stories',
+            h2:'See how customers are innovating with Azure',
+            features:[
+                {
+                    image:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-Desktop-CustomerStories-HP-656x522?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=664&hei=547&qlt=100&fmt=png-alpha&fit=constrain',
+                    logo:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-HP-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=74&qlt=100&fmt=png-alpha&fit=constrain',
+                    h3:'HP incorporated GitHub Copilot into its workflow to help developers collaborate more easily and work more productively.',
+                    p:'Products',
+                    a:'Case study',
+                    links:[
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-GitHubCopilot-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'GitHub Copilot'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureDevOps-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure DevOps'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Hero-icon-337178?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=16&hei=16&qlt=85&fmt=png-alpha&fit=constrain',
+                            a:'Visual Studio'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Customer-GM-Product-GitHub?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'GitHub Enterprise'
+                        },
+                    ],
+                },
+                {
+                    image:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-Desktop-CustomerStories-Unity-656x522?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=664&hei=547&qlt=100&fmt=png-alpha&fit=constrain',
+                    logo:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Unity-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100&fit=constrain',
+                    h3:'Unity made game development more accessible to all by using Azure OpenAI Service to create an AI assistant that helps creators throughout their development workflows.',
+                    p:'Products',
+                    a:'Case study',
+                    links:[
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureOpenAIService-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=20&hei=20&qlt=85',
+                            a:'Azure OpenAI Service'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureAIContentSafety-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure AI Content Safety'
+                        }
+                    ],
+                },
+                {
+                    image:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-Desktop-CustomerStory-Media-LEGO?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=664&hei=547&qlt=100&fmt=png-alpha&fit=constrain',
+                    logo:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-LEGO-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100',
+                    h3:'LEGO House takes the phusical brick to new frontiers with inventive, interactive digital experiences built with Azure solutions.',
+                    p:'Products',
+                    a:'Case study',
+                    links:[
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureIoTEdge-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=20&hei=20&qlt=85',
+                            a:'Azure IoT Edge'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureKubernetesService-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure Kubernetes Service(AKS)'
+                        }
+                    ],
+                },
+                {
+                    image:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-Desktop-CustomerStories-Siemens-656x522?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=664&hei=547&qlt=100&fit=constrain',
+                    logo:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Siemens-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100&fit=constrain',
+                    h3:'Siemens connects frontline workers and engineers for real-time problem-solving using Azure AI Studio.',
+                    p:'Products',
+                    a:'Case study',
+                    links:[
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureAI-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure AI'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-ProductandServices-Featured-AzureAIStudio-28x28?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure AI Studio'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureMachineLearning-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure Machine Learning'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureOpenAIService-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=20&hei=20&qlt=85',
+                            a:'Azure OpenAI Service'
+                        },
+                    ],
+                },
+                {
+                    image:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Customer-img-Heineken-2x?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=664&hei=547&qlt=85&fmt=png-alpha&fit=constrain',
+                    logo:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Heineken-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=85&fit=constrain',
+                    h3:'HEINEKEN built chatbots that connect employees with information across the company using Azure OpenAI Service and its built-in ChatGPT capabilities.',
+                    p:'Products',
+                    a:'Case study',
+                    links:[
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureAI-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure AI'
+                        },
+                        {
+                            img:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/351994-Product-Logo-AzureOpenAIService-16x16?resMode=sharp2&op_usm=1.5,0.65,15,0&qlt=85',
+                            a:'Azure OpenAI Service'
+                        }
+                    ],
+                }
+            ],
+            btnleft:'images/arrow-left-svgrepo-com(1).svg',
+            btnright:'images/arrow-left-svgrepo-com(1).svg',
+            arrw:'images/arrow_right.svg',
+            span:'View all stories'
         }
 
 
@@ -1014,9 +1134,151 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     })
     // -------------------
+    // sec6
+    const secSixBg = document.querySelector('.sec6-mob').src = microsoft.main.section6.bg
+    const secContents = document.getElementById('sec6-contents')
+    const secSixContent = document.createElement('div')
+    secSixContent.className = 'sec-6-content'
+    const secSixH2 = document.createElement('h2')
+    secSixH2.innerHTML = microsoft.main.section6.h2
+    const secSixP = document.createElement('p')
+    secSixP.innerHTML = microsoft.main.section6.p
+    const secSixA = document.createElement('a')
+    secSixA.innerHTML = microsoft.main.section6.a
+    secSixContent.append(secSixH2,secSixP,secSixA)
+    secContents.append(secSixContent)
 
     // .........................
+    // sec7
+    const secSevenBg = document.getElementById('sec7_bgMob').src = microsoft.main.section7.bg
+    const secSevenSubHead = document.querySelector('.stories').innerHTML = microsoft.main.section7.p
+    const secSevenHead = document.querySelector('.head7').innerHTML = microsoft.main.section7.h2
 
+    microsoft.main.section7.features.forEach(item => {
+        const secSevenInnerContents = document.querySelector('.sec7-botm-cont');
+    
+        const secSevenItem = document.createElement('div');
+        secSevenItem.classList.add('sec7-item');
+    
+        // -----
+        const secSevenImages = document.createElement('div');
+        secSevenImages.classList.add('sec7-image');
+        const secSevenImg = document.createElement('img');
+        secSevenImg.src = item.image;
+    
+        secSevenImages.append(secSevenImg);
+        // -----
+    
+        // -----
+        const secSevenContents = document.createElement('div');
+        secSevenContents.classList.add('sec7-content');
+    
+        // Top content (logo and heading)
+        const contTop = document.createElement('div');
+        contTop.classList.add('cont-top');
+        contTop.innerHTML = `
+        <div class='cont-top-img'>
+        <img src='${item.logo}'></div>
+         <h3>${item.h3}</h3>`;
+    
+        // Bottom content (products and links)
+        const contBotm = document.createElement('div');
+        contBotm.classList.add('cont-botm');
+
+        // bottom content up
+        const contBotmUp = document.createElement('div')
+        contBotmUp.className = 'contBotm-up'
+
+        const ContBotmP = document.createElement('p');
+        ContBotmP.innerHTML = item.p;
+    
+        const linkUls = document.createElement('ul');
+        item.links.forEach(link => {
+            const linkLis = document.createElement('li');
+            linkLis.innerHTML = `
+            <div class='sec7-ul-img'><img src='${link.img}'></div>
+            <div class='sec7-ul-a'> <a href='#'>${link.a}</a></div>`;
+            linkUls.append(linkLis);
+        });
+
+        // bottom content down
+        const contBotmDown = document.createElement('div')
+        contBotmDown.className = 'contBotm-down'
+        contBotmDown.innerHTML = `<a href=''>${item.a}</a>`
+
+        
+        contBotmUp.append(ContBotmP, linkUls);
+        contBotm.append(contBotmUp,contBotmDown)
+        secSevenContents.append(contTop, contBotm);
+        // -----
+    
+        secSevenItem.append(secSevenImages, secSevenContents);
+        secSevenInnerContents.append(secSevenItem);
+        //-----
+
+    });
+    //-----
+    const secSevenButtons = document.querySelector('.sec7-btns')
+    const sevenRightBtn = document.createElement('button')
+    sevenRightBtn.className = 'sec7-btn-right'
+    const sevenRightImg = document.createElement('img')
+    sevenRightImg.src = microsoft.main.section7.btnright
+
+    const sevenLeftBtn = document.createElement('button')
+    sevenLeftBtn.className = 'sec7-btn-left'
+    const sevenLeftImg = document.createElement('img')
+    sevenLeftImg.src = microsoft.main.section7.btnleft
+    
+    sevenLeftBtn.append(sevenLeftImg)
+    sevenRightBtn.append(sevenRightImg)
+    secSevenButtons.append(sevenLeftBtn,sevenRightBtn)
+        
+        //-----
+    sevenLeftBtn.disabled = true;
+
+    const secSevenScroll = document.querySelector('.sec7-scroll');
+    const scrollItem = document.querySelector('.sec7-item')
+    const scrollAmount = scrollItem.getBoundingClientRect().width + 12
+
+    // fn - scroll, click
+
+    secSevenScroll.addEventListener('scroll', updateWindow)
+
+    function updateWindow(){
+        if(secSevenScroll.scrollLeft === 0){
+            sevenLeftBtn.disabled = true
+        } else{
+            sevenLeftBtn.disabled = false
+        }
+
+        if(secSevenScroll.scrollLeft + secSevenScroll.clientWidth >= secSevenScroll.scrollWidth){
+            sevenRightBtn.disabled = true
+        } else{
+            sevenRightBtn.disabled = false
+        }
+    }
+        sevenLeftBtn.addEventListener('click',() =>{
+            secSevenScroll.scrollBy({
+                left: -scrollAmount,
+                behavior:'auto'
+            })
+            console.log(scrollAmount)
+        })
+        sevenRightBtn.addEventListener('click',() =>{
+            secSevenScroll.scrollBy({
+                left: scrollAmount, 
+                behavior:'smooth'
+            })   
+            console.log(scrollAmount)
+        }) 
+    
+    const secSevenBtn = document.getElementById('btn7')
+    const secSevenBtnImg = document.createElement('img')
+    secSevenBtnImg.src = microsoft.main.section7.arrw
+    secSevenBtn.append(secSevenBtnImg)
+    const secSevenP = document.getElementById('story').innerHTML = microsoft.main.section7.span
+
+    // ...........................................
     }
 
     buildTeamsPage()
