@@ -146,21 +146,21 @@ const microsoft = {
                     image:"images/grid1-img-Desktop-feature-img1@2x.avif",
                     heading:"Purchase GitHub on Azure",
                     para:"Scale and provision the entire GitHub suite of services from the Azure portal.",
-                    arrow:"images/rightArrow.png",
+                    arrow:"images/arrow_right.svg",
                     text:"Learn more"
                 },
                 {
                     image:"images/grid2-img-Desktop-feature-img2@2x.avif",
                     heading:"Create custom dev workstations",
                     para:"Get set up for success by creating, customizing, and connecting to dev boxes with Dev Home.",
-                    arrow:"images/rightArrow.png",
+                    arrow:"images/arrow_right.svg",
                     text:"Explore Microsoft Dev Box"
                 },
                 {
                     image:"images/grid3-img-Desktop-feature-img3@2x.avif",
                     heading:"Discover the AI Toolkit for Visual Studio Code",
                     para:"Explore,try,fine-tune,and integrate state-of-the-art models into your applications.",
-                    arrow:"images/rightArrow.png",
+                    arrow:"images/arrow_right.svg",
                     text:"Learn more"
                 }
             ]
@@ -440,11 +440,64 @@ const microsoft = {
             btnleft:'images/arrow-left-svgrepo-com(1).svg',
             btnright:'images/arrow-left-svgrepo-com(1).svg',
             arrw:'images/arrow_right.svg',
-            span:'View all stories'
-        }
+            span:'View all stories',
+            ols:[
+                'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-HP-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=74&qlt=100&fmt=png-alpha&fit=constrain',
+                'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Unity-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100&fit=constrain',
+                'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-LEGO-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100',
+                'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Siemens-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=100&fit=constrain',
+                'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351994-CustomerStories-Logo-Heineken-135x58?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=174&hei=75&qlt=85&fit=constrain',
+            ]
+        },
+        section8:{
+            bg1:'images/sec8-Mobile-CTA-BG-2x-1.avif',
+            bg2:'images/sec8-Desktop-CTA-BG-4x-070924ACOMhp.avif',
+            h2:'Take the next step',
+            uls:[
+                {
+                    h3:'Choose the Azure account that\'s right for you',
+                    p:'Pay as you go or try Azure for free for up to 30 days.',
+                    arrw:'images/arrow_right.svg',
+                    a:'Get started with Azure'
+                },
+                {
+                    h3:'Connect with a sales specialist',
+                    p:'Chat with or call a sales specialist for personalized guidance.',
+                    arrw:'images/arrow_right.svg',
+                    a:'Get in Touch'
+                },
+                {
+                    h3:'New to Azure? Learn at your own pace',
+                    p:'Learn cloud computing basics with self-paced modules on Microsoft Learn.',
+                    arrw:'images/arrow_right.svg',
+                    a:'Get Started'
+                }
+            ]
+        },
 
-
+        bottom:{
+            AzureImg:'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/acom_social_icon_azure',
+            span:'Get the Azure mobile app',
+            ul:[
+                'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/acom_social_icon_instagram?scl=1',
+                'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/acom_social_icon_linkedin?scl=1'
+            ]
+    }
     // -------------
+    },
+
+    footer:{
+        nav:[
+            {
+                h2s:['Explore Azure', 'Products and pricing', 'Solutions and support', 'Partners','Resources','Cloud computing'],
+                li1:['What is Azure?', 'Get started with Azure','Global infrastructure','Datacenter regions','Trust your cloud','Azure Essentials','Customer stories'],
+                li2:['Products','Azure pricing','Free Azure services','Flexible purchase options','FinOps on Azure','Optimize your costs'],
+                li3:['Solutions','Resources for accelerating growth','Solution architectures','Support','Azure demo and live Q&A'],
+                li4:['Azure Marketplace','Find a partner','Join ISV Success'],
+                li5:['Training and certifications','Documentation','Blog','Developer resources','Students','Events and Webinars','Analyst reports, white papers, and e-books','Videos'],
+                li6:['What is cloud computing?','What is cloud migration','What is a hybrid cloud?','What is AI?','What is PaaS?','What is laaS?','What is SaaS?','What is DevOps?']
+            }
+        ]
     }
 
 }
@@ -1278,6 +1331,192 @@ document.addEventListener("DOMContentLoaded", function(){
     secSevenBtn.append(secSevenBtnImg)
     const secSevenP = document.getElementById('story').innerHTML = microsoft.main.section7.span
 
+    // ols
+    const secSevenOls = document.querySelector('.sec7-ols')
+    microsoft.main.section7.ols.forEach(ol =>{
+        const secsevenOlLis = document.createElement('li')
+        const sevenOldiv = document.createElement('div')
+        sevenOldiv.className = 'sec7-ol-div'
+
+         const sevenLiIndicator = document.createElement('span')
+        sevenLiIndicator.className = 'sec7-indicator'
+
+        const sevenLiPad = document.createElement('div')
+        sevenLiPad.className = 'sec7-li-pad'
+        const sevenLiDiv = document.createElement('div')
+        sevenLiDiv.className = 'sec7-li-div'
+        const sevenLiImgPad = document.createElement('div')
+        sevenLiImgPad.className = 'sec7-li-img-pad'
+
+        const secSevenOlsImgs = document.createElement('img')
+        secSevenOlsImgs.src = ol 
+
+        sevenLiImgPad.append(secSevenOlsImgs)
+        sevenLiDiv.append(sevenLiImgPad)
+        sevenLiPad.append(sevenLiDiv)
+        sevenOldiv.append(sevenLiPad,sevenLiIndicator)
+        secsevenOlLis.append(sevenOldiv)
+        secSevenOls.append(secsevenOlLis)
+    })
+
+    // fns
+
+    const secSevenLiDiv = document.querySelectorAll('.sec7-ol-div')
+    secSevenLiDiv.forEach((li,idx) =>{
+        if(idx === 0){
+            li.classList.add('visible')
+        }
+        
+        li.addEventListener('click',() =>{
+            removeIndicator()
+            li.classList.add('visible')
+
+            secSevenScroll.scrollTo({
+            left: idx * scrollAmount
+            })
+        })
+    })
+
+    function removeIndicator(){
+        secSevenLiDiv.forEach(li =>{
+            li.classList.remove('visible')
+        })
+    }
+
+    // .........................
+        // sec8     
+    const secEightBgOne = document.querySelector('.sec8-mob').src = microsoft.main.section8.bg1
+    const secEightBgTwo = document.querySelector('.sec8-desk').src = microsoft.main.section8.bg2
+    const secEightH2 = document.querySelector('.head8').innerHTML = microsoft.main.section8.h2
+
+    const secEightGrids = document.getElementById('content-grid')
+    microsoft.main.section8.uls.forEach(ul =>{
+        const EightGrid = document.createElement('div')
+        EightGrid.className = 'section1_cards'
+        EightGrid.id = 'sec8-cards'
+
+        const eightGridContent = document.createElement('div')
+        eightGridContent.className = 'grid-content'
+        const gridPad = document.createElement('div')
+        gridPad.className = 'grid-pad'
+
+        const gridContTop = document.createElement('div')
+        gridContTop.className = 'grid-cont-top'
+        const contTopH3 = document.createElement('h3')
+        contTopH3.innerHTML = ul.h3 
+        const contTopP = document.createElement('p')
+        contTopP.innerHTML = ul.p 
+
+        gridContTop.append(contTopH3,contTopP)
+
+        const gridContBot = document.createElement('div')
+        gridContBot.className = 'grid-cont-bot'
+        const gridContBotIn = document.createElement('a')
+        gridContBotIn.className = 'feat-a'
+
+        const contTopArrw = document.createElement('button')
+        contTopArrw.innerHTML = `<img src='${ul.arrw }'>`
+        const contTopA = document.createElement('p')
+        contTopA.innerHTML = ul.a
+
+        gridContBotIn.append(contTopArrw,contTopA)
+        gridContBot.append(gridContBotIn)
+
+        gridPad.append(gridContTop,gridContBot)
+        eightGridContent.append(gridPad)
+        EightGrid.append(eightGridContent)
+        secEightGrids.append(EightGrid)
+    })               
+   
+    // .........................
+        // bottom
+    const bottomContent = document.querySelector('.botm-content-1')
+
+    const botmContOne = document.createElement('div')
+    botmContOne.className = 'botmContent-left'
+    const contOnePad = document.createElement('a')
+    contOnePad.className = 'botm-cont1-a'
+
+            // left
+    const contLeftImg = document.createElement('span')
+    contLeftImg.innerHTML = `<img src='${microsoft.main.bottom.AzureImg}'>`
+    const contLeftSpan = document.createElement('a')
+    contLeftSpan.innerHTML = microsoft.main.bottom.span
+    
+    contOnePad.append(contLeftImg,contLeftSpan)
+    botmContOne.append(contOnePad)
+           
+            // right 
+    const botmContTwo = document.createElement('div')
+    botmContTwo.className = 'botmContent-right'
+    const botmContTwoUl = document.createElement('ul')
+    botmContTwoUl.className = 'botmContent-2-ul'
+
+    microsoft.main.bottom.ul.forEach(ul =>{
+        const bottomLi = document.createElement('li')
+        const bottomLiA = document.createElement('a')
+        const imgElement = document.createElement('img');
+        imgElement.src = ul;
+
+        bottomLiA.append(imgElement)
+        bottomLi.append(bottomLiA)
+        botmContTwoUl.append(bottomLi)
+    })
+
+    botmContTwo.append(botmContTwoUl)
+    bottomContent.append(botmContOne,botmContTwo)
+              
+    // .........................
+    // footer
+    const footNav1 = document.querySelector('.footNav-1');
+    const footNav2 = document.querySelector('.footNav-2');
+    const h2WithLiMapping = {};
+    const nav = microsoft.footer.nav[0];
+    
+    // Map each h2 to its corresponding li array
+    nav.h2s.forEach((h2, idx) => {
+        const liKey = `li${idx + 1}`;
+        h2WithLiMapping[h2] = nav[liKey];  
+    });                         
+  
+    // Function to append h2 and its corresponding li items in a separate div to the given container
+    function appendToContainer(container, h2Text, liItems) {
+        // Create the wrapper div for h2 and ul
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.className = 'h2-ul-wrapper';
+    
+        // Create h2 element
+        const h2Element = document.createElement('h4');
+        h2Element.textContent = h2Text;
+    
+        // Create ul element
+        const ulElement = document.createElement('ul');
+    
+        // Create li elements and append to ul
+        liItems.forEach(liText => {
+            const liElement = document.createElement('li');
+            liElement.textContent = liText;
+            ulElement.appendChild(liElement);
+        });
+     
+        // Append h2 and ul to the wrapper div
+        wrapperDiv.appendChild(h2Element);
+        wrapperDiv.appendChild(ulElement);
+    
+        // Append wrapper div to the container
+        container.appendChild(wrapperDiv);
+    }
+    
+    // Append first 3 h2 and corresponding li to footNav-1
+    for (let i = 0; i < 3; i++) {
+        appendToContainer(footNav1, nav.h2s[i], h2WithLiMapping[nav.h2s[i]]);
+    }
+    
+    // Append the remaining 3 h2 and corresponding li to footNav-2
+    for (let i = 3; i < nav.h2s.length; i++) {
+        appendToContainer(footNav2, nav.h2s[i], h2WithLiMapping[nav.h2s[i]]);
+    }
+    
     // ...........................................
     }
 
