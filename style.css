@@ -547,6 +547,7 @@ form{
     display: flex;
     align-items: center;
     border: 2px solid;
+    cursor: pointer;
     /* display: none; */
 }
 .slide_arrows img{
@@ -831,6 +832,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    cursor: pointer;
 }
 .cont1 button{
     display: flex;
@@ -839,6 +841,7 @@ form{
     background-color: transparent;
     border: none;
     font-size: 16px;
+    cursor: pointer;
 }
 .Bwrites ul li:first-child button{
     padding-top: 0 !important;
@@ -1214,12 +1217,14 @@ form{
     flex: 0 0 auto;
     width: 100%;
     max-width: calc(1328px / 6);
+    cursor: pointer;
 }
 .sec5-feat-list a{
     max-width: calc(1328px / 6);
     box-shadow: 0 0 0.125rem var(--root-depth-color-1, rgba(0, 0, 0, 0.12)),0 0.063rem 0.125rem var(--root-depth-color-2, rgba(0, 0, 0, 0.14));
     background-color: #fff;
     width: 100%;
+    cursor: pointer;
 }
 .trans{
     padding: 1rem;
@@ -1303,6 +1308,7 @@ form{
     background-color: transparent;
     position: absolute;
     background-color: #fff;
+    cursor: pointer;
 }
 .res-arrows .right{
     right: 10px;
@@ -1520,6 +1526,7 @@ form{
     display: flex;
     align-items: center;
     background-color: #fff;
+    cursor: pointer;
 }
 .sec7-btns button img{
     width: 26px;
@@ -2233,6 +2240,7 @@ form{
 }
 .sec7-ols li{
     max-width: calc(1328px / 6);
+    cursor: pointer;
 }
 .sec7-ols .sec7-ol-div{
     z-index: 11;
