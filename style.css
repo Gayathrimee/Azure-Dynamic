@@ -2534,12 +2534,13 @@ form{
 }
 
 /* ------------------------------- */
-
-@media screen and (min-width:1440px) {
-
-body,html{
+@media (min-width:1440px) and (max-width:1690px) {
+html,body{
     overflow-x: hidden;
+    overflow-y: scroll;
 }
+}
+@media screen and (min-width:1440px) {
 .container{
     padding-inline:5%;
     max-width: 1328px;                                                     
