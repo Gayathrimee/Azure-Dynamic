@@ -329,7 +329,7 @@ const microsoft = {
             p:'Go beyond the limits of on-premises datacenters with more regions than any other provider.',
             a:'Explore the globe'
         },
-
+        
         section7:{
             bg:'images/sec7-Desktop-CustomerStories-BG@4x-1.jpeg',
             p:'customer stories',
@@ -495,10 +495,17 @@ const microsoft = {
                 li3:['Solutions','Resources for accelerating growth','Solution architectures','Support','Azure demo and live Q&A'],
                 li4:['Azure Marketplace','Find a partner','Join ISV Success'],
                 li5:['Training and certifications','Documentation','Blog','Developer resources','Students','Events and Webinars','Analyst reports, white papers, and e-books','Videos'],
-                li6:['What is cloud computing?','What is cloud migration','What is a hybrid cloud?','What is AI?','What is PaaS?','What is laaS?','What is SaaS?','What is DevOps?']
+                li6:['What is cloud computing?','What is cloud migration?','What is a hybrid cloud?','What is AI?','What is PaaS?','What is laaS?','What is SaaS?','What is DevOps?']
             }
-        ]
-    }
+        ],
+        a1Img:'',
+        a1:'English (India)',
+        a2Img:'images/azure.microsoft.com.svg',
+        a2:'Your Privacy Choices',
+        a3:'Consumer Health Privacy',
+        uls:['Contact Microsoft','Privacy','Terms of use','Trademarks','About our ads','© Microsoft 2024']
+    },
+    chat:'Chat with sales'
 
 }
 
@@ -728,15 +735,54 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location.href = url
     });
  
+    // stickynav with fns
+    const allSections = document.querySelectorAll('.sectionScroll')
     const stickyNav = document.getElementById('nav_uls')
-    microsoft.stickynav.uls.forEach( item => {
+
+    microsoft.stickynav.uls.forEach( (item,idx) => {
         const ulItems = document.createElement('li')
         ulItems.innerHTML = 
-        `<a href = "#"</a> <div class = "indicator"></div> 
-        <span class = "features">${item}</span> `
+        `<a href = "#"> 
+        <span class = "features">${item}</span> 
+        <div class = "indicator"></div> `
+        
+        
+        if(idx=== 0){
+            ulItems.classList.add('selected')
+        }
+        
+        ulItems.addEventListener('click',(e) =>{
+            e.preventDefault()
+            
+            const ulLiItems = stickyNav.querySelectorAll('li')
+            ulLiItems.forEach(li =>{
+                li.classList.remove('selected')   
+            })
+
+            ulItems.classList.add('selected')
+
+            allSections[idx].scrollIntoView({behavior:'smooth'})
+        })
 
         stickyNav.appendChild(ulItems)
     })
+
+    // ------
+    window.addEventListener('scroll', ()=>{
+        allSections.forEach((section,idx) =>{
+            const sectionTop = section.getBoundingClientRect().top
+            const sectionHeight = section.offsetHeight
+
+            if(sectionTop >= 0 && sectionTop < window.innerHeight - sectionHeight / 2){
+
+                const ulLiItems = stickyNav.querySelectorAll('li')
+                ulLiItems.forEach(li => li.classList.remove('selected'))
+
+                ulLiItems[idx].classList.add('selected')
+            }
+        })
+    })
+    // --------
 
     const hiddenStickyNav = document.getElementById('nav-hidden-uls')
     microsoft.stickynav.uls.forEach(item => {
@@ -751,7 +797,6 @@ document.addEventListener("DOMContentLoaded", function(){
     hiddenUl.append(hiddenNavBtn)
 
     const arrowDown = document.getElementById('dwn_arw').src = microsoft.arrowdown.image
-
 
     const stickyRight = document.getElementById('nav_rit_in')
     stickyRight.innerHTML = microsoft.stickynav.text
@@ -770,21 +815,40 @@ document.addEventListener("DOMContentLoaded", function(){
     const leftArrowContainer = document.getElementById('l_arw');
     const rightArrowContainer = document.getElementById('r_arw');
 
+    // showing btns
+    leftArrowButton.style.visibility = 'hidden'
+    function scrollButton(){
+      if(container.scrollLeft === 0){
+        leftArrowButton.style.visibility = 'hidden'
+      } else{
+        leftArrowButton.style.visibility = 'visible'
+      }
+
+      if(container.scrollLeft + container.clientWidth >= container.scrollWidth){
+        rightArrowButton.style.visibility = 'hidden'
+      } else{
+        rightArrowButton.style.visibility = 'visible'
+      }
+    }
+
+    container.addEventListener('scroll',scrollButton)
+    // ------
+
     // ...................... scroll features when arrow button is clicked ...............................
 
     leftArrowButton.addEventListener('click', function() {
         container.scrollBy({
-            left: -200,
+            left: -250,                    
             behavior: 'smooth'
         });
     });
 
     rightArrowButton.addEventListener('click', function() {
         container.scrollBy({
-            left: 200,
+            left: 250,
             behavior: 'smooth'
         });
-    });
+    }); 
 
     // ----------------------------
     const stickyLeftNav = document.querySelector('.stickynav');
@@ -860,7 +924,7 @@ document.addEventListener("DOMContentLoaded", function(){
         </div>
         </div>
         `
-        theUls.append(lis)
+        theUls.append(lis)    
         bWrites.append(theUls)
     })
     const btn = document.getElementById('btn')
@@ -880,11 +944,14 @@ document.addEventListener("DOMContentLoaded", function(){
             btn.classList.remove('active');
         });
     };
-
+    
+    // ------------
+     
     let contentOne = document.querySelectorAll('.cont1')
     let contentTwo = document.querySelectorAll('.cont2')
     let Indicator = document.querySelectorAll('.Bwrites  ul li .indicator')
 
+            // ----
     function aiBtn(){
         contentOne.forEach((btn) =>{
             btn.classList.remove('rotate')
@@ -897,6 +964,13 @@ document.addEventListener("DOMContentLoaded", function(){
         })
         console.log('its indicator')
     }
+
+    function ContentTwoFn(){
+        contentTwo.forEach((cont2) =>{
+            cont2.classList.remove('show')
+        })
+    }
+            // ----      
 
     contentOne.forEach((item,idx) =>{
          if(idx === 0){
@@ -912,13 +986,12 @@ document.addEventListener("DOMContentLoaded", function(){
             Indicator[idx].classList.add('flow')
             console.log('not working')
 
-            contentTwo.forEach((cont2) =>{
-                cont2.classList.remove('show')
-            })
+            ContentTwoFn()
             contentTwo[idx].classList.toggle('show')
            
         })
     })
+    // -------------
 
     // ......................... 
     // sec3
@@ -1253,7 +1326,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <div class='sec7-ul-a'> <a href='#'>${link.a}</a></div>`;
             linkUls.append(linkLis);
         });
-
+  
         // bottom content down
         const contBotmDown = document.createElement('div')
         contBotmDown.className = 'contBotm-down'
@@ -1465,9 +1538,20 @@ document.addEventListener("DOMContentLoaded", function(){
 
     botmContTwo.append(botmContTwoUl)
     bottomContent.append(botmContOne,botmContTwo)
+
+window.addEventListener('scroll',()=>{
+    const theBotm = document.querySelector('.bottom')
+    const botmTop = theBotm.getBoundingClientRect().top
+    if(botmTop < window.innerHeight){
+        stickyNav.classList.add('hidden')
+    } else{
+        stickyNav.classList.remove('hidden')
+    }
+})
               
     // .........................
     // footer
+        // nav
     const footNav1 = document.querySelector('.footNav-1');
     const footNav2 = document.querySelector('.footNav-2');
     const h2WithLiMapping = {};
@@ -1475,35 +1559,33 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // Map each h2 to its corresponding li array
     nav.h2s.forEach((h2, idx) => {
-        const liKey = `li${idx + 1}`;
+        const liKey = `li${idx + 1}`;                          
         h2WithLiMapping[h2] = nav[liKey];  
     });                         
   
-    // Function to append h2 and its corresponding li items in a separate div to the given container
     function appendToContainer(container, h2Text, liItems) {
-        // Create the wrapper div for h2 and ul
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'h2-ul-wrapper';
     
-        // Create h2 element
         const h2Element = document.createElement('h4');
         h2Element.textContent = h2Text;
     
-        // Create ul element
         const ulElement = document.createElement('ul');
     
-        // Create li elements and append to ul
         liItems.forEach(liText => {
             const liElement = document.createElement('li');
-            liElement.textContent = liText;
+
+            const aElement = document.createElement('a');
+            aElement.textContent = liText;
+            aElement.href = "#"; 
+    
+            liElement.appendChild(aElement);
             ulElement.appendChild(liElement);
         });
      
-        // Append h2 and ul to the wrapper div
         wrapperDiv.appendChild(h2Element);
         wrapperDiv.appendChild(ulElement);
     
-        // Append wrapper div to the container
         container.appendChild(wrapperDiv);
     }
     
@@ -1517,8 +1599,46 @@ document.addEventListener("DOMContentLoaded", function(){
         appendToContainer(footNav2, nav.h2s[i], h2WithLiMapping[nav.h2s[i]]);
     }
     
+        // base
+    const footBaseOne = document.querySelector('.base-1')
+    const footBaseTwo = document.querySelector('.base-2')
+    const footBaseThree = document.querySelector('.base-3')
+
+    footBaseOne.innerHTML = microsoft.footer.a1
+
+    const footTwoCont = document.createElement('span')
+    footTwoCont.innerHTML =  microsoft.footer.a2 
+
+    const footBaseTwoImg = document.createElement('img')
+    footBaseTwoImg.src = microsoft.footer.a2Img
+
+    footBaseTwo.append(footBaseTwoImg,footTwoCont)
+
+    footBaseThree.innerHTML = microsoft.footer.a3
+
+    const footBaseNav = document.querySelector('.base-nav')
+    const footBaseUl = document.createElement('ul')
+    microsoft.footer.uls.forEach(li =>{
+        const footBaseLi = document.createElement('li')
+        const footBaseA = document.createElement('a')
+        footBaseA.href = '#'
+        footBaseA.innerHTML = li
+
+        footBaseLi.append(footBaseA)
+        footBaseUl.append(footBaseLi)
+        footBaseNav.append(footBaseUl)
+    })
+
+    // .........................
+    // end
+    const chatWord = document.querySelector('.chat')
+    const chatButton = document.createElement('button')
+    chatButton.className = 'chat-btn'
+    chatButton.innerHTML = microsoft.chat
+    chatWord.append(chatButton)
+    
     // ...........................................
     }
 
     buildTeamsPage()
-})
+})  
